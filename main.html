@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="headerstyle.css">
+    <link rel="stylesheet" href="navstyle.css">
+    <style>
+      * {box-sizing:border-box}
+      
+      .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+      }
+      
+      .mySlides {
+        display: none;
+      }
+      
+       .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+       user-select: none;
+      }
+      
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+      .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+      }
+      
+      .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+      }
+      
+      .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+      }
+    
+      .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+      }
+      
+       .active, .dot:hover {
+        background-color: #717171;
+      }
+      
+      .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+      }
+      
+      @-webkit-keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+      }
+      
+      @keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+      } 
+      </style>
+</head>
+<body>
+    <header>
+      <div class="dropdown">
+        <button class="dropbtn">메뉴</button>
+        <div class="dropdown-content">
+          <a href="#">EA SPORTS™ FIFA ONLINE 4</a>
+          <a href="#">메이플 스토리</a>
+          <a href="#">서든어택</a>
+        </div>
+      </div>
+        <h2><a href="main.html">DONXON</a></h2>
+        <a href="https://member.nexon.com/join/join.aspx" class="signup">회원가입</a>
+        <button id="btnlogin">로그인</button>
+    </header>
+    
+    <nav>
+      <div class="slideshow-container">
+        
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img src="images/main_img1.png" style="width:100%">
+          <div class="text">Caption Text</div>
+        </div>
+      
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="images/main_img2.png" style="width:100%">
+          <div class="text">Caption Two</div>
+        </div>
+      
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="images/main_img3.png" style="width:100%">
+          <div class="text">Caption Three</div>
+        </div>
+        
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <br>
+      
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+      </div> 
+      <script>
+      var slideIndex = 1;
+      showSlides(slideIndex);
+      
+      
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+    
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1} 
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none"; 
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block"; 
+        dots[slideIndex-1].className += " active";
+      } 
+      </script>
+    </nav>
+
+    <section>
+	    <div class="notice">      
+	        <table class="table">
+	            <tr>
+	                <th>내용</th>
+	                <th>날짜</th>
+	            </tr>
+	            <tr>
+	                <td><a href="#">메이플 스토리: 하이퍼 버닝</a></td>
+	                <td>2022-06-30 ~ 2022-09-07</td>
+	            </tr>
+	            <tr>
+	                <td><a href="#">서든 어택 시즌3:매드닉스</a></td>
+	                <td>2022-06-23 ~ 2022-09-01</td>
+	            </tr>
+	            <tr>
+	                <td><a href="#">메이플 스토리: 신규 군단장 데미안</a></td>
+	                <td>2022-06-09 ~ 2022-06-30</td>
+	            </tr>
+	            <tr>
+	                <td><a href="#">메이플 스토리: 이그니션 워밍업</a></td>
+	                <td>2022-06-16 ~ 2022-06-29</td>
+	            </tr>
+	            <tr>
+	                <td><a href="#">서든어택: 피날레 서든 Live</a></td>
+	                <td>2022-06-02 ~ 2022-06-04</td>
+	            </tr>
+	        </table>
+	    </div>
+    </section>
+
+    <footer>
+      <img src="images/footer.png">
+    </footer>
+</body>
+</html>
