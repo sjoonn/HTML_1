@@ -62,7 +62,7 @@
 ## <div align="center"> ✍🏻중요한 내용✍🏻 </div>
 
 ### 드롭다운 css코드
-```css
+```css 
   .dropbtn {
         background-color: #76b2ff;
         color: white;
